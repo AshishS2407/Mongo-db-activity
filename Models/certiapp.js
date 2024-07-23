@@ -1,13 +1,15 @@
 const { Schema, model} = require ("mongoose")
 const demo = new Schema ({
-    certificateid : { type:String , required:true},
-    candidatename : {type: String, required: true},
-    coursename : {type: String, required: true},
-    grade : {type:String, required:true},
-    date : {type:String, required: true}
+    Certificateid : { type:String , required:true},
+    Candidatename : {type: String, required: true},
+    Coursename : {type: String, required: true},
+    Grade : {type:String, required:true},
+    Date : {type:String, required: true}
 
 
 })
+
+demo.index({ CertID: 1 }, { unique: true });
 
 const sample = model('details', demo)
 module.exports=sample;
